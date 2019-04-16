@@ -46,5 +46,21 @@ def convertCookies(cookieFromChrome):
     printDict(ret)
     return ret
 
-convertHeaders(oriHeader)
-convertCookies(priCookies)
+def convertData(data):
+    data = data.replace('\"', "")
+    return convertHeaders(data)
+
+def convertParam(data):
+    return convertHeaders(data)
+
+if __name__ == "__main__":
+    
+    convertHeaders('''
+        cateId: 2001313
+        cateOrbreedName: 
+        collectDate: "2019-04-16"
+        marketType: area
+        pageNum: 2
+        pageSize: 10
+        ''')
+    #convertCookies(priCookies)
